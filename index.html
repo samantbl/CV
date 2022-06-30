@@ -1,0 +1,598 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="CV - saman tabloei" />
+  <title>Saman tabloei</title>
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/icons/apple-touch-icon.png" />
+  <link rel="icon" sizes="192x192" href="assets/icons/android-chrome-192x192.png" />
+  <link rel="icon" sizes="512x512" href="assets/icons/android-chrome-512x512.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/icons/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="assets/icons/favicon-16x16.png" />
+  <link rel="manifest" href="/manifest.json" />
+  <link rel="stylesheet" href="assets/css/main.min.css" />
+  <script>
+    if (localStorage.theme === "dark" || !"theme" in localStorage) {
+      document.documentElement.classList.add("dark");
+    } else {
+      document.documentElement.classList.remove("dark");
+    }
+  </script>
+</head>
+
+<body class="bg-[#f1f1f1] mx-4 sm:mx-6 mb-4 dark:bg-zinc-900/90 selection:bg-[#007bff] selection:text-white">
+  <div id="overlay" class="animate-fadeIn hidden fixed inset-0 overflow-hidden z-10 bg-black/90">
+    <div class="w-full h-full flex justify-center items-center">
+      <nav class="">
+        <ul class="0 flex flex-col">
+          <li class="py-2">
+            <a href="#" class="text-white text-2xl">لینک خارجی اول</a>
+          </li>
+          <li class="py-2">
+            <a href="#" class="text-white text-2xl">لینک خارجی دوم</a>
+          </li>
+          <li class="py-2">
+            <a href="#" class="text-white text-2xl">لینک خارجی سوم</a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </div>
+  <div class="max-w-7xl mx-auto">
+    <header class="flex justify-between items-center h-16">
+      <button id="toggleMenu" data-toggle="false" class="z-20 text-gray-600 mr-2 hover:text-black hover:cursor-pointer sm:hidden dark:text-gray-300">
+        <svg class="icon" id="menuIcon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="3" y1="12" x2="21" y2="12" />
+          <line x1="3" y1="6" x2="21" y2="6" />
+          <line x1="3" y1="18" x2="21" y2="18" />
+        </svg>
+        <svg id="closeIcon" class="hidden bg-white text-slate-900 rounded-full w-8 h-8 justify-center items-center" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+          stroke-linecap="round" stroke-linejoin="round">
+          <line x1="18" y1="6" x2="6" y2="18" />
+          <line x1="6" y1="6" x2="18" y2="18" />
+        </svg>
+      </button>
+     <!-- <div class="pr-2 hidden sm:flex sm:items-center">
+        <a href="/" draggable="false" class="flex items-center ml-4">
+          <img src="assets/images/logo.svg" alt="iresume logo" draggable="false" class="h-9 w-auto ml-4 drag-none rounded-lg" />
+          <img src="assets/images/logo-text.svg" alt="iresume logotype" draggable="false" class="h-6 drag-none" />
+        </a>
+        <nav>
+          <ul class="flex">
+            <li class="mx-2">
+              <a href="/" class="text-gray-600 hover:text-black dark:text-gray-300 dark:hover:text-white">لینک خارجی
+                اول</a>
+            </li>
+            <li class="mx-2">
+              <a href="/" class="text-gray-600 hover:text-black dark:text-gray-300 dark:hover:text-white">لینک خارجی
+                دوم</a>
+            </li>
+            <li class="mx-2">
+              <a href="/" class="text-gray-600 hover:text-black dark:text-gray-300 dark:hover:text-white">لینک خارجی
+                سوم</a>
+            </li>
+          </ul>
+        </nav>
+      </div> -->
+      <div class="flex flex-row-reverse px-2 items-center gap-x-2">
+        <button class="text-gray-600 hover:text-black dark:text-gray-300 dark:hover:text-white" id="toggleDarkMode">
+          <svg class="icon hidden" id="moonIcon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
+          </svg>
+          <svg class="icon hidden" id="sunIcon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="5" />
+            <line x1="12" y1="1" x2="12" y2="3" />
+            <line x1="12" y1="21" x2="12" y2="23" />
+            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64" />
+            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78" />
+            <line x1="1" y1="12" x2="3" y2="12" />
+            <line x1="21" y1="12" x2="23" y2="12" />
+            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36" />
+            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22" />
+          </svg>
+        </button>
+        <button class="text-gray-600 text-lg h-6 dark:text-gray-300 font-bold hover:text-black dark:hover:text-white" id="toggleLang">
+          EN
+        </button>
+      </div>
+    </header>
+    <div class="bg-white flex flex-col shadow-md rounded-3xl lg:flex-row dark:bg-zinc-900/95">
+      <aside class="bg-secondary rounded-3xl p-8 dark:bg-[#131313]">
+        <div class="flex flex-col justify-center items-center sticky top-8 lg:w-[260px]">
+          <!-- Profile Picture / تصویر پروفایل -->
+          <img src="assets/images/profile.png" alt="a faceless man" class="w-full max-w-[250px] mb-6" />
+          <!-- Fullname / نام کامل -->
+          <h1 class="text-2xl text-white font-medium mb-2">سامان تابلویی</h1>
+          <div class="flex flex-wrap justify-center mb-2">
+            <!-- Tags / عناوین-->
+            <span class="tag">CR Back office administrator</span>
+            <span class="tag">کارشناسی </span>
+          </div>
+          <div class="flex flex-row-reverse mb-6">
+		  <!--
+            <!-- Instagram page / صفحه اینستاگرام -->
+           <!-- 
+		   <a href="#">
+              <svg class="icon m-1 text-gray-300" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
+                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" />
+              </svg></a>
+			  -->
+            <!-- Twitter page / صفحه توییتر 
+           <!-- 
+		   <a href="#">
+              <svg class="icon m-1 text-gray-300" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z" />
+              </svg></a>
+			  -->
+            <!-- Linkedin page / صفحه لینکدین -->
+            <a href="https://www.linkedin.com/in/saman-tabloei">
+              <svg class="icon m-1 text-gray-300" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" />
+                <rect x="2" y="9" width="4" height="12" />
+                <circle cx="4" cy="4" r="2" />
+              </svg>
+            </a>
+          </div>
+          <!-- Personal Information / اطاعات شخصی -->
+          <table class="w-full text-gray-300 text-sm max-w-[250px] mb-2">
+            <tr class="flex justify-between mb-4">
+              <td>متولد</td>
+              <td>1368</td>
+            </tr>
+            <tr class="flex justify-between mb-4">
+              <td>وضعیت تاهل</td>
+              <td>متاهل</td>
+            </tr>
+            <tr class="flex justify-between mb-4">
+              <td>وضعیت سربازی</td>
+              <td> اتمام خدمت</td>
+            </tr>
+            <tr class="flex justify-between mb-4">
+              <td>شهر محل سکونت</td>
+              <td>تهران</td>
+            </tr>
+            <tr class="flex justify-between mb-4">
+              <td>موبایل</td>
+              <td>09352001743</td>
+            </tr>
+            <tr class="flex justify-between mb-4">
+              <td>ایمیل</td>
+              <td>saman.tabloei@gmail.com</td>
+            </tr>
+            <tr class="flex justify-between mb-4">
+              <td>سابقه کاری</td>
+              <td>10 سال</td>
+            </tr>
+            <tr class="flex justify-between mb-4">
+              <td>حقوق درخواستی</td>
+              <td>تعیین نشده</td>
+            </tr>
+          </table>
+          <!-- Resume Pdf File Link / لینک فایل پی دی اف رزومه -->
+          <a href=".\Theme\assets\cv_file.pdf" target="_blank" class="btn-cta"> دانلود فایل رزومه </a>
+        </div>
+      </aside>
+      <main class="bg-white p-6 lg:py-8 lg:px-10 rounded-3xl dark:bg-zinc-900/95">
+        <!-- About Me (Biography) / درباره من (بیوگرافی) -->
+        <div class="mb-10">
+          <div class="flex items-center text-gray-700 dark:text-gray-300 mb-2">
+            <svg class="icon dark:text-gray-100" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="10" />
+              <line x1="12" y1="16" x2="12" y2="12" />
+              <line x1="12" y1="8" x2="12.01" y2="8" />
+            </svg>
+            <h2 class="mx-2 text-2xl font-semibold dark:text-gray-100">
+              درباره من
+            </h2>
+          </div>
+          <p class="text-slate-600 dark:text-gray-300">
+            یادگیرنده - متمرکز - خلاق - مسئولیت پذیر - هماهنگ با دیگران و تعامل پذیر - صادق 
+          </p>
+        </div>
+        <!-- Work Exprience / سوابق کاری -->
+        <div class="mb-10">
+          <div class="flex items-center text-gray-700 mb-4 dark:text-gray-300">
+            <svg class="icon dark:text-gray-200" viewBox="0 0 24 24" width="24" height="24" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M18 8h1a4 4 0 0 1 0 8h-1" />
+              <path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z" />
+              <line x1="6" y1="1" x2="6" y2="4" />
+              <line x1="10" y1="1" x2="10" y2="4" />
+              <line x1="14" y1="1" x2="14" y2="4" />
+            </svg>
+            <h2 class="mx-2 text-2xl font-semibold dark:text-gray-200">
+              سوابق شغلی
+            </h2>
+          </div>
+          <!-- Sort: Newest to Oldest / مرتب سازی: جدیدترین تا قدیمی ترین -->
+          <ul class="exp-menu-container">
+		  <li class="exp-menu-item">
+              <div class="relative top-[-0.35rem]">
+                <div class="pr-4 text-xl font-semibold text-slate-600 mb-2 dark:text-gray-400">
+                 ایرانسل 
+                </div>
+                <div class="pr-4 text-sm text-slate-500">١٣٩٣ — ١٤٠١</div>
+                <p class="pr-4 text-slate-600 dark:text-gray-300">
+               کارشناس پشتیبانی  
+                </p>
+              </div>
+            </li>
+		   <li class="exp-menu-item">
+              <div class="relative top-[-0.35rem]">
+                <div class="pr-4 text-xl font-semibold text-slate-600 mb-2 dark:text-gray-400">
+                 آسیاتک 
+                </div>
+                <div class="pr-4 text-sm text-slate-500">١٣٩٣ </div>
+                <p class="pr-4 text-slate-600 dark:text-gray-300">
+               کارشناس پشتیبانی 
+                </p>
+              </div>
+            </li>
+            
+			<li class="exp-menu-item">
+              <div class="relative top-[-0.35rem]">
+                <div class="pr-4 text-xl font-semibold text-slate-600 mb-2 dark:text-gray-400">
+                   (رایآزما)راینت
+                </div>
+                <div class="pr-4 text-sm text-slate-500">١٣٩٢ — ١٣٩٣</div>
+                <p class="pr-4 text-slate-600 dark:text-gray-300">
+                 کارشناس فنی
+                </p>
+              </div>
+            </li>
+            <li class="exp-menu-item">
+              <div class="relative top-[-0.35rem]">
+                <div class="pr-4 text-xl font-semibold text-slate-600 mb-2 dark:text-gray-400">
+                  راستین ارقام (مبین نت)
+                </div>
+                <div class="pr-4 text-sm text-slate-500">١٣٩١ — ١٣٩٢</div>
+                <p class="pr-4 text-slate-600 dark:text-gray-300">
+               کارشناس نصب مودم و تجهیزات 
+                </p>
+              </div>
+            </li>
+			
+            <li class="exp-menu-item">
+              <div class="relative top-[-0.35rem]">
+                <div class="pr-4 text-xl font-semibold text-slate-600 mb-2 dark:text-gray-400">
+                  تاکنوگاز
+                </div>
+                <div class="pr-4 text-sm text-slate-500">١٣٨٩ — ١٣٩١</div>
+                <p class="pr-4 text-slate-600 dark:text-gray-300">
+                کارمند برنامه ریزی و تولید
+                </p>
+				 
+              </div>
+            </li>
+          </ul>
+        </div>
+        <!-- Educational Background / سوابق تحصیلی -->
+        <div class="mb-10">
+          <div class="flex items-center text-gray-700 mb-4 dark:text-gray-300">
+            <svg class="icon dark:text-gray-200" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z" />
+              <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z" />
+            </svg>
+            <h2 class="mx-2 text-2xl font-semibold dark:text-gray-200">
+              سوابق تحصیلی
+            </h2>
+          </div>
+          <ul class="exp-menu-container">
+            
+			 <li class="exp-menu-item">
+              <div class="relative top-[-0.35rem]">
+                <div class="pr-4 text-xl font-semibold text-slate-600 mb-2 dark:text-gray-400">
+                  کارشناسی
+                </div>
+                <div class="pr-4 text-sm text-slate-500">۱۳۹۹ — ۱۴۰۱</div>
+                <p class="pr-4 text-slate-600 dark:text-gray-300">
+                 رشته ی فناوری اطلاعات - دانشگاه علمی کاربردی کوشا
+                </p>
+              </div>
+            </li>
+            <li class="exp-menu-item">
+              <div class="relative top-[-0.35rem]">
+                <div class="pr-4 text-xl font-semibold text-slate-600 mb-2 dark:text-gray-400">
+                  کاردانی
+                </div>
+                <div class="pr-4 text-sm text-slate-500">۱۳۹۷ — ۱۳۹۹</div>
+                <p class="pr-4 text-slate-600 dark:text-gray-300">
+                 رشته ی فناوری اطلاعات - دانشگاه علمی کاربردی کوشا
+                </p>
+              </div>
+            </li>
+           
+			<li class="exp-menu-item">
+              <div class="relative top-[-0.35rem]">
+                <div class="pr-4 text-xl font-semibold text-slate-600 mb-2 dark:text-gray-400">
+                  دیپلم
+                </div>
+                <div class="pr-4 text-sm text-slate-500">۱۳۸۷</div>
+                <p class="pr-4 text-slate-600 dark:text-gray-300">
+                مکانیک خوردو - فنی حرفه ای شهدای شهریار
+                </p>
+              </div>
+            </li>
+          </ul>
+        </div>
+        <!-- The Skills / مهارت ها -->
+        <div class="mb-10">
+          <div class="flex items-center text-gray-700 mb-4 dark:text-gray-300">
+            <svg class="icon dark:text-gray-200" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2" />
+            </svg>
+            <h2 class="mx-2 text-2xl font-semibold dark:text-gray-200">
+              مهارت ها
+            </h2>
+          </div>
+          <div class="grid grid-cols1 sm:grid-cols-2 gap-y-4 gap-x-6">
+            <div>
+              <span class="inline-block font-medium text-slate-700 text-md mb-2 dark:text-gray-300">SQL</span>
+              <div class="w-full bg-primary/25 rounded-full">
+                <div class="progress-bar" style="width: 80%;">
+                  <span class="px-2">80%</span>
+                </div>
+              </div>
+            </div>
+            <div>
+              <span class="inline-block font-medium text-slate-700 text-md mb-2 dark:text-gray-300">MS Excell</span>
+              <div class="w-full bg-primary/25 rounded-full">
+                <div class="progress-bar" style="width: 100%;">
+                  <span class="px-2">100%</span>
+                </div>
+              </div>
+            </div>
+            <div>
+              <span class="inline-block font-medium text-slate-700 text-md mb-2 dark:text-gray-300">python</span>
+              <div class="w-full bg-primary/25 rounded-full">
+                <div class="progress-bar" style="width: 40%;">
+                  <span class="px-2">40%</span>
+                </div>
+              </div>
+            </div>
+            <div>
+              <span class="inline-block font-medium text-slate-700 text-md mb-2 dark:text-gray-300">Network+</span>
+              <div class="w-full bg-primary/25 rounded-full">
+                <div class="progress-bar" style="width: 100%;">
+                  <span class="px-2">100%</span>
+                </div>
+              </div>
+            </div>
+            <div>
+              <span class="inline-block font-medium text-slate-700 text-md mb-2 dark:text-gray-300">GSM fundamental</span>
+              <div class="w-full bg-primary/25 rounded-full">
+                <div class="progress-bar" style="width: 100%;">
+                  <span class="px-2">100%</span>
+                </div>
+              </div>
+            </div>
+            <div>
+              <span class="inline-block font-medium text-slate-700 text-md mb-2 dark:text-gray-300">           
+			Data Analysis
+			</span>
+              <div class="w-full bg-primary/25 rounded-full">
+                <div class="progress-bar" style="width: 70%;">
+                  <span class="px-2">70%</span>
+                </div>
+              </div>
+            </div>
+			
+			 
+          </div>
+        </div>
+        <!-- The Languages / زبان ها -->
+        <div class="mb-10">
+          <div class="flex items-center text-gray-700 mb-4 dark:text-gray-300">
+            <svg class="icon dark:text-gray-200" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="10" />
+              <line x1="2" y1="12" x2="22" y2="12" />
+              <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" />
+            </svg>
+            <h2 class="mx-2 text-2xl font-semibold dark:text-gray-200">
+              زبان ها
+            </h2>
+          </div>
+          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+            <div class="flex items-center">
+              <span class="pl-2 font-medium text-slate-700 text-md dark:text-gray-300">فارسی</span>
+              <ul>
+                <li class="dot"></li>
+                <li class="dot"></li>
+                <li class="dot"></li>
+                <li class="dot"></li>
+                <li class="dot"></li>
+              </ul>
+            </div>
+            <div class="flex items-center">
+              <span class="pl-2 font-medium text-slate-700 text-md dark:text-gray-300">انگلیسی</span>
+              <ul>
+                <li class="dot"></li>
+                <li class="dot"></li>
+                <li class="dot"></li>
+                <li class="dot-null"></li>
+                <li class="dot-null"></li>
+              </ul>
+            </div>
+     
+          </div>
+        </div>
+        <!-- The Favorites(Hobbies) / علاقه مندی ها -->
+        <div class="mb-10">
+          <div class="flex items-center text-gray-700 mb-2 dark:text-gray-300">
+            <svg class="icon dark:text-gray-200" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
+            </svg>
+            <h2 class="mx-2 text-2xl font-semibold dark:text-gray-200">
+              علاقه ها
+            </h2>
+          </div>
+          <div class="flex flex-wrap">
+            <span class="favorite-item">Data analysis</span>
+            <span class="favorite-item"> Networking </span>
+              
+            <span class="favorite-item">Database</span>
+                          <span class="favorite-item">کار تیمی</span>
+            <span class="favorite-item">خلاقیت</span>
+          </div>
+        </div>
+        <!-- Work Samples / نمونه کارها -->
+		
+		<!-- 
+        <div class="mb-4">
+          <div class="flex items-center text-gray-700 mb-4 dark:text-gray-300">
+            <svg class="icon dark:text-gray-200" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="2" y="7" width="20" height="14" rx="2" ry="2" />
+              <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16" />
+            </svg>
+            <h2 class="mx-2 text-2xl font-semibold dark:text-gray-200">
+              نمونه کارها
+            </h2>
+          </div>
+          <div class="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
+            <a href="#showModal1" class="btn-modal">
+              <img data-href="#showModal1" src="assets/images/cover.jpg" class="rounded-[2rem]" alt="A music streaming mobile app design">
+            </a>
+            <a href="#showModal2" class="btn-modal">
+              <img data-href="#showModal2" src="assets/images/cover.jpg" class="rounded-[2rem]" alt="A music streaming mobile app design">
+            </a>
+            <a href="#showModal3" class="btn-modal">
+              <img data-href="#showModal3" src="assets/images/cover.jpg" class="rounded-[2rem]" alt="A music streaming mobile app design">
+            </a>
+          </div>
+          <!-- Modals -->
+		  		    <div id="showModal1" class="modal hidden fixed z-10 inset-0 overflow-y-auto" aria-labelledby="modal-title" role="dialog" aria-modal="true">
+            <div class="flex items-end justify-center min-h-screen pt-4 px-4 pb-20 text-center sm:block sm:p-0">
+              <div class="modal-area fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity" aria-hidden="true"></div>
+              <span class="hidden sm:inline-block sm:align-middle sm:h-screen" aria-hidden="true">&#8203;</span>
+              <div class="relative inline-block align-bottom bg-white rounded-lg text-left overflow-hidden shadow-xl transform transition-all sm:my-8 sm:align-middle sm:max-w-xl sm:w-full">
+                <div class="flex justify-between items-center p-5 rounded-t border-b dark:border-gray-600  dark:bg-[#131313]">
+                  <h3 class="text-xl font-semibold text-gray-900 lg:text-2xl dark:text-white">
+                    نمونه کار اول
+                  </h3>
+                  <button type="button" class="btn-close text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm p-1.5 mr-auto inline-flex items-center dark:hover:bg-gray-600 dark:hover:text-white"
+                    data-modal-toggle="defaultModal">
+                    <svg class="w-5 h-5 " fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                      <path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
+                        clip-rule="evenodd"></path>
+                    </svg>
+                  </button>
+                </div>
+                <div class="p-6 space-y-6 dark:bg-[#131313]">
+                  <img src="assets/images/cover.jpg" class="rounded-[2rem]" alt="A music streaming mobile app design">
+                  <p class="text-right leading-relaxed text-gray-500 dark:text-gray-400">
+                    لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است.
+                    چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد
+                    نیاز و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد.
+                  </p>
+                </div>
+                <div class="flex items-center p-6 space-x-2 rounded-b border-t border-gray-200 dark:border-gray-600  dark:bg-[#131313]">
+                  <a href="#"
+                    class="flex flex-row-reverse items-center text-white text-bold bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 rounded-lg text px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+                    دانلود فایل نمونه کار
+                    <svg xmlns="http://www.w3.org/2000/svg" class="ml-2" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+                      <polyline points="7 10 12 15 17 10" />
+                      <line x1="12" y1="15" x2="12" y2="3" />
+                    </svg>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+		  
+          <div id="showModal2" class="modal hidden fixed z-10 inset-0 overflow-y-auto" aria-labelledby="modal-title" role="dialog" aria-modal="true">
+            <div class="flex items-end justify-center min-h-screen pt-4 px-4 pb-20 text-center sm:block sm:p-0">
+              <div class="modal-area fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity" aria-hidden="true"></div>
+              <span class="hidden sm:inline-block sm:align-middle sm:h-screen" aria-hidden="true">&#8203;</span>
+              <div class="relative inline-block align-bottom bg-white rounded-lg text-left overflow-hidden shadow-xl transform transition-all sm:my-8 sm:align-middle sm:max-w-xl sm:w-full">
+                <div class="flex justify-between items-center p-5 rounded-t border-b dark:border-gray-600 dark:bg-[#131313]">
+                  <h3 class="text-xl font-semibold text-gray-900 lg:text-2xl dark:text-white">
+                    نمونه کار دوم
+                  </h3>
+                  <button type="button" class="btn-close text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm p-1.5 mr-auto inline-flex items-center dark:hover:bg-gray-600 dark:hover:text-white"
+                    data-modal-toggle="defaultModal">
+                    <svg class="w-5 h-5 " fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                      <path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
+                        clip-rule="evenodd"></path>
+                    </svg>
+                  </button>
+                </div>
+                <div class="p-6 space-y-6 dark:bg-[#131313]">
+                  <img src="assets/images/cover.jpg" class="rounded-[2rem]" alt="A music streaming mobile app design">
+                  <p class="text-right leading-relaxed text-gray-500 dark:text-gray-400">
+                    لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است.
+                    چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد
+                    نیاز و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد.
+                  </p>
+                </div>
+                <div class="flex items-center p-6 space-x-2 rounded-b border-t border-gray-200 dark:border-gray-600 dark:bg-[#131313]">
+                  <a href="#"
+                    class="flex flex-row-reverse items-center text-white text-bold bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 rounded-lg text px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+                    دانلود فایل نمونه کار
+                    <svg xmlns="http://www.w3.org/2000/svg" class="ml-2" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+                      <polyline points="7 10 12 15 17 10" />
+                      <line x1="12" y1="15" x2="12" y2="3" />
+                    </svg>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div id="showModal3" class="modal hidden fixed z-10 inset-0 overflow-y-auto" aria-labelledby="modal-title" role="dialog" aria-modal="true">
+            <div class="flex items-end justify-center min-h-screen pt-4 px-4 pb-20 text-center sm:block sm:p-0">
+              <div class="modal-area fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity" aria-hidden="true"></div>
+              <span class="hidden sm:inline-block sm:align-middle sm:h-screen" aria-hidden="true">&#8203;</span>
+              <div class="relative inline-block align-bottom bg-white rounded-lg text-left overflow-hidden shadow-xl transform transition-all sm:my-8 sm:align-middle sm:max-w-xl sm:w-full">
+                <div class="flex justify-between items-center p-5 rounded-t border-b dark:border-gray-600 dark:bg-[#131313]">
+                  <h3 class="text-xl font-semibold text-gray-900 lg:text-2xl dark:text-white">
+                    نمونه کار سوم
+                  </h3>
+                  <button type="button" class="btn-close text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm p-1.5 mr-auto inline-flex items-center dark:hover:bg-gray-600 dark:hover:text-white"
+                    data-modal-toggle="defaultModal">
+                    <svg class="w-5 h-5 " fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                      <path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
+                        clip-rule="evenodd"></path>
+                    </svg>
+                  </button>
+                </div>
+                <div class="p-6 space-y-6 dark:bg-[#131313]">
+                  <img src="assets/images/cover.jpg" class="rounded-[2rem]" alt="A music streaming mobile app design">
+                  <p class="text-right leading-relaxed text-gray-500 dark:text-gray-400">
+                    لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است.
+                    چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد
+                    نیاز و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد.
+                  </p>
+                </div>
+                <div class="flex items-center p-6 space-x-2 rounded-b border-t border-gray-200 dark:border-gray-600 dark:bg-[#131313]">
+                  <a href="#"
+                    class="flex flex-row-reverse items-center text-white text-bold bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 rounded-lg text px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+                    دانلود فایل نمونه کار
+                    <svg xmlns="http://www.w3.org/2000/svg" class="ml-2" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+                      <polyline points="7 10 12 15 17 10" />
+                      <line x1="12" y1="15" x2="12" y2="3" />
+                    </svg>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Modals -->
+        </div>
+    </div>
+    <footer class="mx-auto text-center my-8">
+      <p class="text-gray-500" dir="ltr">
+        Copyright © Saman Tabloei — All rights reserved.
+      </p>
+    </footer>
+  </div>
+  </main>
+  <script src="assets/js/main.min.js" defer></script>
+</body>
+
+</html>

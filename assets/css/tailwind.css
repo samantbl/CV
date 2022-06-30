@@ -1,0 +1,156 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  @font-face {
+    font-family: "VazirVF";
+    font-style: normal;
+    src: url("../fonts/vazir/Vazir-Variable.woff2")
+        format("woff2 supports variations"),
+      url("../fonts/vazir/Vazir-Variable.woff2") format("woff2-variations"),
+      url("../fonts/vazir/Vazir-Variable.woff") format("woff-variations");
+  }
+
+  @font-face {
+    font-family: Vazir;
+    src: url("../fonts/vazir/Vazir-Regular.eot");
+    src: url("../fonts/vazir/Vazir-Regular.eot?#iefix")
+        format("embedded-opentype"),
+      url("../fonts/vazir/Vazir-Regular.woff2") format("woff2"),
+      url("../fonts/vazir/Vazir-Regular.woff") format("woff"),
+      url("../fonts/vazir/Vazir-Regular.ttf") format("truetype");
+    font-weight: normal;
+    font-style: normal;
+  }
+
+  @font-face {
+    font-family: Vazir;
+    src: url("../fonts/vazir/Vazir-Bold.eot");
+    src: url("../fonts/vazir/Vazir-Bold.eot?#iefix") format("embedded-opentype"),
+      url("../fonts/vazir/Vazir-Bold.woff2") format("woff2"),
+      url("../fonts/vazir/Vazir-Bold.woff") format("woff"),
+      url("../fonts/vazir/Vazir-Bold.ttf") format("truetype");
+    font-weight: bold;
+    font-style: normal;
+  }
+
+  @font-face {
+    font-family: Vazir;
+    src: url("../fonts/vazir/Vazir-Black.eot");
+    src: url("../fonts/vazir/Vazir-Black.eot?#iefix")
+        format("embedded-opentype"),
+      url("../fonts/vazir/Vazir-Black.woff2") format("woff2"),
+      url("../fonts/vazir/Vazir-Black.woff") format("woff"),
+      url("../fonts/vazir/Vazir-Black.ttf") format("truetype");
+    font-weight: 900;
+    font-style: normal;
+  }
+
+  @font-face {
+    font-familyface: Vazir;
+    src: url("../fonts/vazir/Vazir-Medium.eot");
+    src: url("../fonts/vazir/Vazir-Medium.eot?#iefix")
+        format("embedded-opentype"),
+      url("../fonts/vazir/Vazir-Medium.woff2") format("woff2"),
+      url("../fonts/vazir/Vazir-Medium.woff") format("woff"),
+      url("../fonts/vazir/Vazir-Medium.ttf") format("truetype");
+    font-weight: 500;
+    font-style: normal;
+  }
+
+  @font-face {
+    font-family: Vazir;
+    src: url("../fonts/vazir/Vazir-Light.eot");
+    src: url("../fonts/vazir/Vazir-Light.eot?#iefix")
+        format("embedded-opentype"),
+      url("../fonts/vazir/Vazir-Light.woff2") format("woff2"),
+      url("../fonts/vazir/Vazir-Light.woff") format("woff"),
+      url("../fonts/vazir/Vazir-Light.ttf") format("truetype");
+    font-weight: 300;
+    font-style: normal;
+  }
+
+  @font-face {
+    font-family: Vazir;
+    src: url("../fonts/vazir/Vazir-Thin.eot");
+    src: url("../fonts/vazir/Vazir-Light.eot?#iefix")
+        format("embedded-opentype"),
+      url("../fonts/vazir/Vazir-Thin.woff2") format("woff2"),
+      url("../fonts/vazir/Vazir-Thin.woff") format("woff"),
+      url("../fonts/vazir/Vazir-Thin.ttf") format("truetype");
+    font-weight: 100;
+    font-style: normal;
+  }
+
+  html {
+    font-family: Vazir, ui-sans-serif, system-ui, -apple-system,
+      BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial,
+      "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
+      "Segoe UI Symbol", "Noto Color Emoji";
+    @apply scroll-smooth;
+  }
+
+  @supports (font-variation-settings: normal) {
+    html {
+      font-family: "VazirVF", ui-sans-serif, system-ui, -apple-system,
+        BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial,
+        "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
+        "Segoe UI Symbol", "Noto Color Emoji";
+      @apply scroll-smooth;
+    }
+  }
+}
+
+@layer components {
+  .icon {
+    width: 1.5rem;
+    height: 1.5rem;
+  }
+
+  .exp-menu-container {
+    @apply pr-[0.85rem] border-r-2 border-solid border-slate-300 mr-[0.55rem] flex flex-col-reverse;
+  }
+
+  .exp-menu-item {
+    @apply mb-4 before:content-[''] before:w-4 before:h-4 before:bg-primary before:absolute before:rounded-full before:-mr-[1.4rem] before:shadow-[0_0_0_0.1875rem] before:shadow-primary/25;
+  }
+
+  .tag {
+    @apply bg-slate-700/25 text-gray-300 py-1.5 px-4 m-1 rounded-full text-xs dark:bg-zinc-900;
+  }
+
+  .btn-cta {
+    @apply bg-gradient-to-tr from-ctaGradientStart to-ctaGradientEnd w-full max-w-[250px] py-4 rounded-2xl font-medium text-white shadow-lg shadow-ctaGradientStart/[0.25] text-center dark:shadow-ctaGradientStart/[0.20];
+  }
+
+  .progress-bar {
+    @apply bg-gradient-to-tr from-[#176ae5] to-[#0080ff] rounded-full text-xs p-1 text-left text-white;
+  }
+
+  .dot {
+    @apply inline-block w-3 h-3 bg-primary rounded-full ring-2 ring-offset-2 ring-primary mx-1 dark:ring-offset-zinc-900/95;
+  }
+
+  .dot-null {
+    @apply inline-block w-3 h-3 bg-transparent rounded-full ring-2 ring-offset-2 ring-primary mx-1 dark:ring-offset-zinc-900/95;
+  }
+
+  .favorite-item {
+    @apply bg-gray-800 text-white py-1 px-4 m-1 rounded-full text-sm dark:bg-[#131313];
+  }
+
+  .btn-modal {
+    @apply hover:opacity-75 hover:cursor-pointer;
+  }
+}
+
+@layer utilities {
+  .drag-none {
+    -webkit-user-drag: none;
+    -khtml-user-drag: none;
+    -moz-user-drag: none;
+    -o-user-drag: none;
+    user-drag: none;
+  }
+}

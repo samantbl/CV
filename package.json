@@ -1,0 +1,17 @@
+{
+  "name": "resume-template-v2",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "tailwindcss -i assets/css/tailwind.css -o assets/css/main.css --watch",
+    "build": "tailwindcss -i assets/css/tailwind.css -o assets/css/main.min.css --minify"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "tailwindcss": "^3.0.23"
+  },
+  "dependencies": {}
+}
